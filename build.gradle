@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest.attributes provider: 'J-K. Solbakken'
+    manifest {
+        attributes 'Implementation-Version': version
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
